@@ -1,11 +1,11 @@
-// Assistant.jsx ‚Äî Copilot AI Assistant view
+// Assistant.jsx — Copilot AI Assistant view
 const { useState: useAsstState, useEffect: useAsstEffect, useRef: useAsstRef } = React;
 
 const CHIPS = [
   { icon: "üîî", label: "Create a push campaign" },
   { icon: "üìà", label: "Revenue insights" },
   { icon: "üë•", label: "Segment audience" },
-  { icon: "‚úâÔ∏è", label: "Draft email copy" },
+  { icon: "✍️", label: "Draft email copy" },
 ];
 
 const SYSTEM_PROMPT = `You are Insider Copilot, an AI marketing assistant embedded in the Insider platform. Help marketing professionals with tasks like building audience segments, analyzing campaign performance, drafting email or push notification copy, and extracting revenue insights. Be concise, professional, and actionable. Use bullet points or numbered steps when helpful. Keep responses under 180 words. Reference Insider platform features when relevant (e.g., segments, journeys, A/B tests, web push, email, onsite campaigns).`;
@@ -38,7 +38,7 @@ function MsgBubble({ msg }) {
           background: "linear-gradient(135deg, #5B4CF5, #7c3aed)",
           display: "flex", alignItems: "center", justifyContent: "center",
           color: "white", fontSize: 11, flexShrink: 0, marginTop: 2,
-        }}>‚ú¶</div>
+        }}>✦</div>
       )}
       <div style={{
         maxWidth: 560,
@@ -113,7 +113,7 @@ function AssistantView({ tweaks = {} }) {
   return (
     <div style={{ flex: 1, display: "flex", flexDirection: "column", background: assistantBg, overflow: "hidden" }}>
       {isWelcome ? (
-        /* ‚îÄ‚îÄ Welcome state ‚îÄ‚îÄ */
+        /* ── Welcome state ── */
         <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 24px 40px" }}>
           <h1 style={{ fontSize: 42, fontWeight: 350, color: "#0f0f10", marginBottom: 6, letterSpacing: "-0.8px", textAlign: "center" }}>
             Good Evening, {userName}.
@@ -137,7 +137,7 @@ function AssistantView({ tweaks = {} }) {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={handleKey}
-                placeholder="Ask Copilot anything about your campaigns, segments, or revenue‚Ä¶"
+                placeholder="Ask Copilot anything about your campaigns, segments, or revenue…"
                 style={{
                   width: "100%", minHeight: 68, border: "none", outline: "none",
                   resize: "none", fontSize: 14, color: "#111", background: "transparent",
@@ -148,7 +148,7 @@ function AssistantView({ tweaks = {} }) {
                 <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                   <button style={asst.ctrlBtn}>+</button>
                   <button style={{ ...asst.ctrlBtn, padding: "4px 10px", fontSize: 11.5, gap: 5, display: "flex", alignItems: "center" }}>
-                    <span style={{ fontSize: 12 }}>‚ú¶</span> COPILOT <span style={{ fontSize: 10 }}>‚ñæ</span>
+                    <span style={{ fontSize: 12 }}>✦</span> COPILOT <span style={{ fontSize: 10 }}>✦</span>
                   </button>
                 </div>
                 <button
@@ -164,7 +164,7 @@ function AssistantView({ tweaks = {} }) {
                     letterSpacing: "0.04em", transition: "background 0.15s",
                     fontFamily: "inherit",
                   }}>
-                  SEND REQUEST <span style={{ fontSize: 13 }}>‚å≤</span>
+                  SEND REQUEST <span style={{ fontSize: 13 }}>→</span>
                 </button>
               </div>
             </div>
@@ -190,7 +190,7 @@ function AssistantView({ tweaks = {} }) {
           </div>
         </div>
       ) : (
-        /* ‚îÄ‚îÄ Chat state ‚îÄ‚îÄ */
+        /* ── Chat state ── */
         <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
           {/* Messages */}
           <div style={{ flex: 1, overflow: "auto", padding: "28px 32px", display: "flex", flexDirection: "column", gap: 18, maxWidth: 860, width: "100%", margin: "0 auto", boxSizing: "border-box" }}>
@@ -202,7 +202,7 @@ function AssistantView({ tweaks = {} }) {
                   background: "linear-gradient(135deg, #5B4CF5, #7c3aed)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   color: "white", fontSize: 11, flexShrink: 0,
-                }}>‚ú¶</div>
+                }}>✦</div>
                 <div style={{ background: "white", border: "1px solid #ebebef", borderRadius: "14px 14px 14px 4px", padding: "10px 14px", boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}>
                   <ThinkingDots />
                 </div>
@@ -223,7 +223,7 @@ function AssistantView({ tweaks = {} }) {
                   value={input}
                   onChange={e => setInput(e.target.value)}
                   onKeyDown={handleKey}
-                  placeholder="Continue the conversation‚Ä¶"
+                  placeholder="Continue the conversation…"
                   rows={1}
                   style={{
                     flex: 1, border: "none", outline: "none", resize: "none",
@@ -242,7 +242,7 @@ function AssistantView({ tweaks = {} }) {
                     display: "flex", alignItems: "center", gap: 5, fontFamily: "inherit",
                     transition: "background 0.15s", letterSpacing: "0.03em",
                   }}>
-                  SEND <span style={{ fontSize: 13 }}>‚å≤</span>
+                  SEND <span style={{ fontSize: 13 }}>→</span>
                 </button>
               </div>
               <div style={{ display: "flex", gap: 6, marginTop: 8, flexWrap: "wrap" }}>

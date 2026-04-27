@@ -1,4 +1,4 @@
-// Dashboard.jsx â€” Main analytics dashboard
+// Dashboard.jsx — Main analytics dashboard
 const { useState: useDashState } = React;
 
 function TwoLineChart({ data1, data2, color1 = "#5B4CF5", color2 = "#a78bfa", w = 300, h = 72 }) {
@@ -75,7 +75,7 @@ function StatRow({ label, value }) {
     <div style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: "1px solid #f3f3f5", fontSize: 11.5 }}>
       <span style={{ color: "#6b7280", display: "flex", alignItems: "center", gap: 3 }}>
         {label}
-        <span style={{ fontSize: 9, color: "#d1d5db" }}>â“˜</span>
+        <span style={{ fontSize: 9, color: "#d1d5db" }}>ⓘ</span>
       </span>
       <span style={{ color: "#111", fontWeight: 500 }}>{value}</span>
     </div>
@@ -110,8 +110,8 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
           </p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
-          <span style={{ fontSize: 12, color: "#374151", fontWeight: 500 }}>26.03.2026 â€” 26.04.2026</span>
-          <button style={dsh.ghostBtn}>ðŸ“…</button>
+          <span style={{ fontSize: 12, color: "#374151", fontWeight: 500 }}>26.03.2026 — 26.04.2026</span>
+          <button style={dsh.ghostBtn}>📅</button>
           <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11.5, color: "#374151", cursor: "pointer" }}>
             <input type="checkbox" defaultChecked style={{ accentColor: accent }} />
             Compare with Previous Period
@@ -139,17 +139,17 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
               background: "rgba(255,255,255,0.15)",
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 14, color: "white",
-            }}>âœ¦</div>
+            }}>✦</div>
             <div>
               <div style={{ color: "white", fontWeight: 600, fontSize: 13, marginBottom: 1 }}>Copilot is ready</div>
-              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: 11.5 }}>Ask me anything â€” segments, insights, campaigns, copy</div>
+              <div style={{ color: "rgba(255,255,255,0.7)", fontSize: 11.5 }}>Ask me anything — segments, insights, campaigns, copy</div>
             </div>
           </div>
           <button style={{
             background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)",
             color: "white", borderRadius: 6, padding: "6px 14px",
             cursor: "pointer", fontSize: 11.5, fontWeight: 600, pointerEvents: "none",
-          }}>Open Copilot â†’</button>
+          }}>Open Copilot →</button>
         </div>
       )}
 
@@ -162,18 +162,18 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
             <div style={dsh.cardHead}>
               <span style={dsh.label}>ONSITE CAMPAIGNS WITH CONTROL GROUP ANALYTICS</span>
               <div style={{ display: "flex", gap: 3 }}>
-                <button style={dsh.iconBtn}>â‹®â‹®</button>
-                <button style={dsh.iconBtn}>â£¿</button>
+                <button style={dsh.iconBtn}>⋮⋮</button>
+                <button style={dsh.iconBtn}>⣿</button>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, marginTop: 12 }}>
               {/* Revenue */}
               <div style={{ paddingRight: 18, borderRight: "1px solid #f0f0f3" }}>
-                <div style={dsh.metricLabel}>INCREMENTAL REVENUE <span style={dsh.info}>â“˜</span></div>
+                <div style={dsh.metricLabel}>INCREMENTAL REVENUE <span style={dsh.info}>ⓘ</span></div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 8, margin: "3px 0 6px" }}>
                   <span style={dsh.bigNum}>513,796 USD</span>
-                  <span style={dsh.up}>â†‘ 4.7%</span>
+                  <span style={dsh.up}>↑ 4.7%</span>
                 </div>
                 <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
                   {["Day", "Month"].map(t => (
@@ -181,21 +181,21 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
                   ))}
                 </div>
                 <div style={{ fontSize: 9.5, color: "#aaa", marginBottom: 5 }}>
-                  â„¹ Only the data of the last 7 days is displayed in this chart.
+                  ℹ Only the data of the last 7 days is displayed in this chart.
                 </div>
                 <div style={{ display: "flex", gap: 10, fontSize: 9.5, color: "#aaa", marginBottom: 4 }}>
-                  <span><span style={{ color: accent }}>â”€â”€</span> 27.04.2026â€“28.04.2026</span>
-                  <span><span style={{ color: "#a78bfa" }}>- -</span> 16.04.2027â€“21.04.2027</span>
+                  <span><span style={{ color: accent }}>──</span> 27.04.2026–28.04.2026</span>
+                  <span><span style={{ color: "#a78bfa" }}>- -</span> 16.04.2027–21.04.2027</span>
                 </div>
                 <TwoLineChart data1={rev1} data2={rev2} color1={accent} color2="#a78bfa" w={260} h={72} />
               </div>
 
               {/* Conversion Rate */}
               <div style={{ paddingLeft: 18 }}>
-                <div style={dsh.metricLabel}>CONVERSION RATE UPLIFT <span style={dsh.info}>â“˜</span></div>
+                <div style={dsh.metricLabel}>CONVERSION RATE UPLIFT <span style={dsh.info}>ⓘ</span></div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 8, margin: "3px 0 6px" }}>
                   <span style={dsh.bigNum}>40.19%</span>
-                  <span style={dsh.up}>â†‘ 14.8%</span>
+                  <span style={dsh.up}>↑ 14.8%</span>
                 </div>
                 <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
                   {["Conversion Rates", "Monthly Conversion Rates"].map(t => (
@@ -208,14 +208,14 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
                   <span><span style={{ display: "inline-block", width: 8, height: 8, background: accent, borderRadius: 1, marginRight: 3 }}></span>Insider CR</span>
                 </div>
                 <BarGroup data1={[0.032, 0.035, 0.031]} data2={[0.048, 0.051, 0.046]}
-                  labels={["22.02â€“25.03", "26.03â€“28.04"]} c1="#d1d5db" c2={accent} w={240} h={110} />
+                  labels={["22.02–25.03", "26.03–28.04"]} c1="#d1d5db" c2={accent} w={240} h={110} />
               </div>
             </div>
 
             {/* All OnSite */}
             <div style={{ marginTop: 12, padding: "9px 12px", background: "#f9f9fb", borderRadius: 6, border: "1px solid #ebebef", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 34, height: 34, background: "#ebebef", borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>ðŸ“Š</div>
+                <div style={{ width: 34, height: 34, background: "#ebebef", borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>📊</div>
                 <div>
                   <div style={{ fontSize: 12.5, fontWeight: 600, color: "#111", marginBottom: 2 }}>All OnSite Analytics</div>
                   <div style={{ fontSize: 11.5, color: "#6b7280" }}>
@@ -237,18 +237,18 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
               <div key={t} style={{ ...dsh.card, minHeight: 100 }}>
                 <div style={dsh.cardHead}>
                   <span style={dsh.label}>{t}</span>
-                  <button style={dsh.iconBtn}>â£¿</button>
+                  <button style={dsh.iconBtn}>⣿</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right â€” Mobile App Analytics */}
+        {/* Right — Mobile App Analytics */}
         <div style={dsh.card}>
           <div style={dsh.cardHead}>
             <span style={dsh.label}>MOBILE APP ANALYTICS</span>
-            <button style={dsh.iconBtn}>â£¿</button>
+            <button style={dsh.iconBtn}>⣿</button>
           </div>
 
           <div style={{ display: "flex", gap: 0, marginTop: 8, borderBottom: "1px solid #f0f0f3", marginBottom: 10 }}>
@@ -258,14 +258,14 @@ function DashboardView({ onOpenAssistant, tweaks = {} }) {
             ))}
           </div>
 
-          <div style={dsh.metricLabel}>Click-Through Revenue <span style={dsh.info}>â“˜</span></div>
+          <div style={dsh.metricLabel}>Click-Through Revenue <span style={dsh.info}>ⓘ</span></div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, margin: "3px 0 10px" }}>
             <span style={{ fontSize: 18, fontWeight: 700, color: "#111" }}>2,513,071 USD</span>
-            <span style={dsh.up}>â†‘ 8.6%</span>
+            <span style={dsh.up}>↑ 8.6%</span>
           </div>
 
           <div style={{ fontSize: 9.5, color: "#aaa", marginBottom: 4 }}>
-            <span style={{ color: "#f59e0b" }}>â”€â”€</span> 20.03.76â€“16.04.70%{"  "}<span style={{ color: "#fb923c" }}>- -</span> 22.07.70â€“25.03.70%
+            <span style={{ color: "#f59e0b" }}>──</span> 20.03.76–16.04.70%{"  "}<span style={{ color: "#fb923c" }}>- -</span> 22.07.70–25.03.70%
           </div>
           <MobileChart data={mob} w={278} h={54} />
 

@@ -38,7 +38,7 @@
 //     );
 //   }
 //
-// âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─────────────────────────────────────────────────────────────────────────────
 
 const __TWEAKS_STYLE = `
   .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
@@ -133,9 +133,9 @@ const __TWEAKS_STYLE = `
   .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
 `;
 
-// ââ useTweaks âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── useTweaks ───────────────────────────────────────────────────────────────
 // Single source of truth for tweak values. setTweak persists via the host
-// (__edit_mode_set_keys â host rewrites the EDITMODE block on disk).
+// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
 function useTweaks(defaults) {
   const [values, setValues] = React.useState(defaults);
   // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
@@ -150,9 +150,9 @@ function useTweaks(defaults) {
   return [values, setTweak];
 }
 
-// ââ TweaksPanel âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
 // Floating shell. Registers the protocol listener BEFORE announcing
-// availability â if the announce ran first, the host's activate could land
+// availability — if the announce ran first, the host's activate could land
 // before our handler exists and the toolbar toggle would silently no-op.
 // The close button posts __edit_mode_dismissed so the host's toolbar toggle
 // flips off in lockstep; the host echoes __deactivate_edit_mode back which
@@ -237,7 +237,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
           <b>{title}</b>
           <button className="twk-x" aria-label="Close tweaks"
                   onMouseDown={(e) => e.stopPropagation()}
-                  onClick={dismiss}>â</button>
+                  onClick={dismiss}>✕</button>
         </div>
         <div className="twk-body">{children}</div>
       </div>
@@ -245,7 +245,7 @@ function TweaksPanel({ title = 'Tweaks', children }) {
   );
 }
 
-// ââ Layout helpers ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Layout helpers ──────────────────────────────────────────────────────────
 
 function TweakSection({ label, children }) {
   return (
@@ -268,7 +268,7 @@ function TweakRow({ label, value, children, inline = false }) {
   );
 }
 
-// ââ Controls ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── Controls ────────────────────────────────────────────────────────────────
 
 function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
   return (
@@ -298,7 +298,7 @@ function TweakRadio({ label, value, options, onChange }) {
   const n = opts.length;
 
   // The active value is read by pointer-move handlers attached for the lifetime
-  // of a drag â ref it so a stale closure doesn't fire onChange for every move.
+  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
   const valueRef = React.useRef(value);
   valueRef.current = value;
 
