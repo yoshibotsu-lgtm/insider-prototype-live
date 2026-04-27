@@ -2,9 +2,9 @@
 const { useState: useAsstState, useEffect: useAsstEffect, useRef: useAsstRef } = React;
 
 const CHIPS = [
-  { icon: "üîî", label: "Create a push campaign" },
-  { icon: "üìà", label: "Revenue insights" },
-  { icon: "üë•", label: "Segment audience" },
+  { icon: "📝", label: "Create a push campaign" },
+  { icon: "📊", label: "Revenue insights" },
+  { icon: "👥", label: "Segment audience" },
   { icon: "✍️", label: "Draft email copy" },
 ];
 
